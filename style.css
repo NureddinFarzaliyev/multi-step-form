@@ -1,0 +1,585 @@
+:root{
+    --font: 'Ubuntu', sans-serif;
+    --light: 400;
+    --medium: 500;
+    --bold: 700;
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--magnolia);
+}
+
+
+/* General Styling and First Page */
+
+.bg-mobile{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    top: 0px;
+}
+
+.bg-desktop{
+    display: none;
+}
+
+.step-indicator{
+    display: flex;
+    width: 55%;
+    justify-self: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.indicators{
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    margin-top: -8rem;
+    margin-left: 75%;
+}
+
+.ind{
+    height: 2.3rem;
+    width: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--white);
+    border-radius: 50%;
+    font-family: var(--font);
+    font-weight: var(--medium);
+    color: var(--white);
+    margin-left: 10px;
+}
+
+.step-ind-text{
+    display: none;
+}
+
+.ind-active{
+    border: var(--light-blue);
+    background-color: var(--light-blue);
+    color: var(--marine-blue)!important; 
+}
+
+.container{
+    background-color: #fff;
+    min-height: 25rem;
+    width: 22rem;
+    margin: 0 auto 0 auto;
+    padding: 1.8rem 1.5rem;
+    border-radius: .6rem;
+    font-family: var(--font);
+    margin-top: 10vh;
+    overflow: visible;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.container h1{
+    color: var(--marine-blue);
+    margin-bottom: .7rem;
+}
+
+.container p{
+    color: var(--cool-gray);
+    width: 15rem;
+    margin-bottom: .7rem;
+}
+
+.container label{
+    font-size: 14px;
+    color: var(--marine-blue);
+    font-weight: var(--light);
+}
+
+.container input{
+    display: block;
+    margin: .2rem 0rem 1rem 0rem;
+    height: 2.3rem;
+    width: 100%;
+    padding: .3rem .6rem;
+    font-family: var(--font);
+    border-radius: 5px;
+    border: solid .5px var(--cool-gray);
+}
+
+input:hover{
+    border-color: var(--purplish-blue);
+}
+
+.next-btn{
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    left: 0;
+}
+
+.next-button{
+    cursor: pointer;
+}
+
+.next-btn button{
+    height: 2.5rem;
+    width: 6rem;
+    margin-right: 1rem;
+    border-radius: .2rem;
+    border: none;
+    background-color: var(--marine-blue);
+    color: #fff;
+}
+
+.form div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.required-span{
+    display: none;
+    font-size: 12px;
+    color: var(--strawberry-red);
+    text-align: right;
+    font-weight: var(--medium);
+}
+
+.required-span-active{
+    display: inline-block;
+}
+
+.invalid-input{
+    border-color: var(--strawberry-red) !important;
+}
+
+/* === Second page === */
+
+.selbox{
+    border: solid 3px var(--cool-gray);
+    border-radius: .7rem;
+    padding: .8rem;
+    display: flex;
+    margin-top: .8rem;
+    cursor: pointer;
+}
+
+.selbox:hover{
+    border-color: var(--purplish-blue);
+}
+
+.toggle{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    height: 3rem;
+    border-radius: .7rem;
+    background-color: hsla(229, 24%, 87%, 0.288);
+}
+
+.toggle div{
+    font-weight: var(--medium);
+}
+
+.monthly-text{
+    color: var(--marine-blue);
+}
+
+.yearly-text{
+    color: var(--cool-gray);
+}
+
+.selbox div{
+    height: 100%;
+    margin-left: 1rem;
+}
+
+.selbox div h4{
+    margin-top: .4rem;
+    color: var(--marine-blue);
+}
+
+.selbox div p{
+    margin-top: .4rem;
+}
+
+.free{
+    color: var(--marine-blue) !important;
+    font-weight: var(--bold);
+}
+
+/* Switch button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--marine-blue);
+    -webkit-transition: .2s;
+    transition: .2s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    -webkit-transition: .2s;
+    transition: .2s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--marine-blue);
+}
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--marine-blue);
+}
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* SWITCH END */
+
+
+
+.free{
+    display: none;
+    font-size: 12px;
+}
+
+/* ==== STEP 3 ==== */
+
+.checkbox{
+    padding: 1rem 1rem 0rem 1rem;
+    border: solid var(--magnolia) 3px;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.checkbox-active{
+    border-color: var(--purplish-blue);
+    background-color: rgb(243, 243, 243);
+}
+
+.checkbox-tick{
+    width: 2rem !important;
+    margin-right: 1rem !important;
+}
+
+.checkbox-label{
+    display: flex;
+    flex-direction: column;
+    min-width: 1rem;
+    justify-content: center;
+    height: 1rem;
+}
+
+.checkbox p{
+    margin-bottom: 0;
+    margin-top: .2rem;
+}
+
+.checkbox h4{
+    color: var(--marine-blue);
+    font-size: 1rem;
+    min-width: 10rem;
+}
+
+.checkbox-price{
+    color: var(--purplish-blue);
+}
+
+.r-gr{
+    background-color: hsla(229, 24%, 87%, 0.301);
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+}
+
+.r-gr div{
+    width: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.r-gr h4{
+    color: var(--marine-blue);
+    height: 1.8rem;
+}
+
+.receipt h5{
+    font-weight: var(--medium);
+    color: gray;
+    font-size: 15px;
+    margin-top: 1rem;
+}
+
+.receipt p{
+    color: var(--marine-blue);
+    margin-bottom: 0px;
+    margin-top: 1rem;
+}
+
+.r-bold{
+    font-weight: var(--bold);
+    margin-top: -1rem !important;
+}
+
+.r-btm{
+    display: flex;
+    width: 28rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.2rem 1rem;
+}
+
+.last-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-container img{
+    margin-top: 2rem;
+}
+
+.last-container h1{
+    color: var(--marine-blue);
+    font-size: 25px;
+    margin-top: 1rem;
+}
+
+.last-container p{
+    width: 18rem;
+    text-align: center;
+}
+
+
+/* .first-step{
+    display: none;
+} */
+
+.second-step{
+    display: none;
+}
+
+.third-step{
+    display: none;
+}
+
+.fourth-step{
+    display: none;
+}
+
+.fifth-step{
+    display: none;
+}
+
+/*! ===== Desktop responsiveness ===== !*/
+
+@media only screen and (min-width: 800px) {
+    body{
+        background-color: var(--cool-gray);
+    }
+    
+    .bg-mobile{
+        display: none;
+    }
+    
+    .bg-desktop{
+        display: inline-block !important;
+        background-image: url(assets/images/bg-sidebar-desktop.svg);
+        height: 29.6rem;
+        min-width: 17.1rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        position: absolute;
+        z-index: 1;
+        border-radius: 10px;
+    }
+    
+    .container{
+        width: 50rem;
+        min-height: 32rem;
+        padding: 1.2rem;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .step-indicator{
+        position: absolute;
+        padding: 3rem;
+        left: 3rem;
+        z-index: 2;
+        width: 17rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        left: 0;
+    }
+
+    .indicators{
+        margin-top: -3rem;
+        display: block;
+        width: 20rem;
+        margin-top: auto;
+        margin-left: auto;
+    }
+    
+    .indicators div{
+        margin-top: 1rem;
+    }
+    
+    .step-ind-text{
+        display: block;
+        height: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: auto;
+        width: 10rem;
+        margin-left: -10rem;
+    }
+    
+    .in-container{
+        width: 30rem;
+        margin: 3rem 3rem 3rem 21rem;
+    }
+    
+    .step-ind-text span{
+        color: var(--cool-gray);
+    }
+    
+    .step-ind-text h4{
+        color: var(--white);
+    }
+    
+    .form input{
+        width: 80%;
+    }
+    
+    .next-btn{
+        background-color: transparent;
+    }
+    
+    .next-btn button{
+        margin-right: 2rem;
+    }
+
+    .form div{
+        width: 80%;
+    }
+
+    .s2-div{
+        margin-left: 40%;
+    }
+    
+    .selection-boxes{
+        display: flex;
+    }
+    
+    .selbox img{
+        height: 2rem;
+        margin: 0rem;
+        width: 2rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    .selbox{
+        width: 30%;
+        margin: 1%;
+        min-height: 12rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0rem;
+    }
+    
+    .selbox div{
+        margin-top: 4rem;
+    }
+    
+    .toggle{
+        margin-top: 5rem;
+    }
+
+    .checkbox-price{
+        margin-left: 13rem;
+        margin-top: 10px;
+    }
+
+    .r-gr{
+        width: 20rem;
+    }
+
+    .last-container-container{
+        position: relative;
+    }
+
+    .last-container{
+        position: absolute;
+        top: 0rem;
+        bottom: 0rem;
+        right: 0rem;
+        left: 35%;
+    }
+
+    .last-container img{
+        margin-top: 0rem;
+    }
+
+    .last-container p{
+        width: 25rem;
+    }
+  }
